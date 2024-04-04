@@ -17,13 +17,13 @@
             left: 75%;
         }
         #add{
-           font-weight: bold;.
+            font-weight: bold;.
 
         }
         .custTable{
             position: absolute;
             top: 15%;
-          width: 60%;
+            width: 60%;
         }
         .custSearchCardHeader{
             background-color: #1E88E5 !important;
@@ -116,7 +116,7 @@
         <div class="modal-dialog modal-dialog-centered" style="background-color: #5e0300">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #ffffff">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel add" style="font-weight: bold; color: #32c457;">Add Customer</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel add" style="font-weight: bold; color: #32c457;">Add Item</h1>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -126,19 +126,19 @@
                     <div class="custInputText">
                         <div class="form-floating mb-3 p-1">
                             <input type="text" class="form-control" id="floatingInput" placeholder="Customer Id">
-                            <label for="floatingInput">Customer Id</label>
+                            <label for="floatingInput">Item Id</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="flotingName" placeholder="Customer Name">
-                            <label for="flotingName">Customer Name</label>
+                            <label for="flotingName">Item Name</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingAddress" placeholder="Customer Address">
-                            <label for="floatingAddress">Customer Address</label>
+                            <label for="floatingAddress">Item Quantity</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="number" class="form-control" id="floatingSalary" placeholder="Customer Salary">
-                            <label for="floatingSalary">Customer Salary</label>
+                            <label for="floatingSalary">Item Price</label>
                         </div>
                     </div>
                     <!--button set-->
@@ -148,13 +148,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-radius: 20px;background-color: purple">Add Customer</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-radius: 20px;background-color: purple">Add Item</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="background-color: #32c457; box-shadow: 1px 1px 20px 5px #110c0f;font-weight: bold;color: black">Add Customer</button>
+    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="background-color: #32c457; box-shadow: 1px 1px 20px 5px #110c0f;font-weight: bold;color: black">Add Item</button>
 </div>
 <thead>
 
@@ -163,73 +163,73 @@
     <thead class="table-light">
     <tr>
         <th class="text-white customerHead">No</th>
-        <th class="text-white customerHead">Customer Name</th>
-        <th class="text-white customerHead">Customer Address</th>
-        <th class="text-white customerHead">Customer Salary</th>
+        <th class="text-white customerHead">Item Name</th>
+        <th class="text-white customerHead">Item Quantity</th>
+        <th class="text-white customerHead">Item Price</th>
     </tr>
     </thead>
 
     <tbody>
     <tr>
         <td>1</td>
-        <td>John Doe</td>
-        <td>123 Main St</td>
-        <td>$50,000</td>
+        <td>Apple</td>
+        <td>10</td>
+        <td>$1.00</td>
     </tr>
     <tr>
         <td>2</td>
-        <td>Jane Smith</td>
-        <td>456 Elm St</td>
-        <td>$60,000</td>
+        <td>Orange</td>
+        <td>15</td>
+        <td>$1.50</td>
     </tr>
     <tr>
         <td>3</td>
-        <td>Michael Johnson</td>
-        <td>789 Oak St</td>
-        <td>$55,000</td>
+        <td>Banana</td>
+        <td>20</td>
+        <td>$0.75</td>
     </tr>
     <!-- Add more rows as needed -->
     <tr>
         <td>4</td>
-        <td>Alice Johnson</td>
-        <td>456 Pine St</td>
-        <td>$70,000</td>
+        <td>Milk</td>
+        <td>5</td>
+        <td>$2.50</td>
     </tr>
     <tr>
         <td>5</td>
-        <td>David Brown</td>
-        <td>789 Maple St</td>
-        <td>$65,000</td>
+        <td>Bread</td>
+        <td>8</td>
+        <td>$1.75</td>
     </tr>
     <tr>
         <td>6</td>
-        <td>Sarah White</td>
-        <td>123 Birch St</td>
-        <td>$75,000</td>
+        <td>Eggs</td>
+        <td>12</td>
+        <td>$3.00</td>
     </tr>
     <tr>
         <td>7</td>
-        <td>Emily Davis</td>
-        <td>456 Cedar St</td>
-        <td>$80,000</td>
+        <td>Cheese</td>
+        <td>3</td>
+        <td>$4.00</td>
     </tr>
     <tr>
         <td>8</td>
-        <td>James Taylor</td>
-        <td>789 Walnut St</td>
-        <td>$85,000</td>
+        <td>Tomato</td>
+        <td>6</td>
+        <td>$0.50</td>
     </tr>
     <tr>
         <td>9</td>
-        <td>Robert Wilson</td>
-        <td>123 Ash St</td>
-        <td>$90,000</td>
+        <td>Chicken</td>
+        <td>2</td>
+        <td>$5.00</td>
     </tr>
     <tr>
         <td>10</td>
-        <td>Emma Martinez</td>
-        <td>456 Spruce St</td>
-        <td>$95,000</td>
+        <td>Beef</td>
+        <td>4</td>
+        <td>$6.00</td>
     </tr>
     </tbody>
 </table>
@@ -237,7 +237,7 @@
 <!--search bar-->
 <div class="card custSearchCard">
     <div class="card-header custSearchCardHeader">
-        <b>Search Customer</b>
+        <b>Search Item</b>
     </div>
     <div class="card-body">
         <div class="input-group mb-3">
