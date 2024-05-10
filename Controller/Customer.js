@@ -1,4 +1,5 @@
-var customers = [];
+import CustomerModel from "../Model/CustomerModel.js";
+import {customers}  from "../Db/db.js";
 
 $("#Save").on('click', () => {
     var CustomerId = $(".CustomerId").val();
@@ -6,12 +7,14 @@ $("#Save").on('click', () => {
     var CustomerAddress = $(".CustomerAddress").val();
     var CustomerSalary = $(".CustomerSalary").val();
 
-    let customer = {
+  /*  let customer = {
         id: CustomerId,
         name: CustomerName,
         address: CustomerAddress,
         salary: CustomerSalary,
-    };
+    };*/
+    let customer = new CustomerModel(CustomerId, CustomerName, CustomerAddress, CustomerSalary);
+
 
     customers.push(customer); // Push the new customer object to the customers array
     loadTable(); // Call the loadTable function to update the table
