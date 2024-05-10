@@ -1,0 +1,56 @@
+
+.customer {
+    position: relative;
+    top: -3%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.CustomerBtn{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+#add{
+    font-weight: bold;.
+
+}
+.custTable{
+   position: relative;
+    top: -80%;
+    left: 1%;
+
+}
+.custSearchCardHeader{
+    background-color: #7996f5 !important;
+}
+.customerHead{
+    color: black!important;
+    background-color: chartreuse !important;
+
+
+}
+.custSearchCard{
+
+    width: 100%;
+    height: 30%;
+    position: relative;
+    top: 15%;
+
+
+}
+.custBtnSet{
+    position: absolute;
+    top: 100%;
+    left: 1%;
+}
+.custBtnSet2{
+    position: absolute;
+    top: 95%;
+    left: -1%;
+
+}
+.custBtn{
+    width: 160px;
+}

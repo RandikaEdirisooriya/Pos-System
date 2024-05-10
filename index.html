@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/Style/normalize.css">
     <link rel="stylesheet" href="assets/Style/SideBar.css">
+    <link rel="stylesheet" href="assets/Style/styles.css">
+    <link rel="stylesheet" href="assets/Style/Customer.css">
+    <link rel="stylesheet" href="assets/Style/Item.css">
+    <link rel="stylesheet" href="assets/Style/OrderDetail.css">
+    <link rel="stylesheet" href="assets/Style/OrderPlacement.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -14,130 +19,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 <style>
-    .custHomeCard{
-        display: flex;
-
+    .Home{
         position: relative;
-
-        width: 100vw;
-        height: 94vh;
-        border-radius: 0;
+        top: 10%;
     }
-    .custHomeImg{
-        width: 100vw;
-        height: 100vh;
-    }
-    .custTexColor{
-        color: black;
-        font-weight: bold;
-    }
-    .customer{
-        width: 100%;
-        position: relative;
-        top: -50%;
-    }
-    .CustomerBtn{
-        position: absolute;
-        top: 65%;
-        left: 75%;
-    }
-    #add{
-        font-weight: bold;.
-
-    }
-    .custTable{
-        position: absolute;
-        top: 15%;
-        width: 60%;
-    }
-    .custSearchCardHeader{
-        background-color: #1E88E5 !important;
-    }
-    .customerHead{
-        color: black!important;
-        background-color: chartreuse !important;
-
-
-    }
-    .custSearchCard{
-
-        width: 40%;
-        height: 20%;
-        position: absolute;
-        left: 60%;
-        top: 15%;
-    }
-    .custBtnSet{
-        position: absolute;
-        top: 100px;
-        left: 10px;
-    }
-    .custBtnSet2{
-        position: absolute;
-        top: 430px;
-        left: 30px;
-    }
-    .custBtn{
-        width: 160px;
-    }
-    .Item{
-        position: relative;
-        top: 50vh;
-    }
-.orderDetails{
-    position: absolute;
-    top: 300vh;
-    width: 100%;
-    left: 10%;
+.Item{
+    position: relative;
+    top:5%;
 }
-.OrderPlacement{
-    width: 100%;
-    position: absolute;
-    top: 400vh;
+.customer{
+    position: relative;
+    top:15%;
 }
-    .div{
 
-        width: 100%;
-    }
 
-    .div1{
-        position: absolute;
-        top: 20%;
-    }
-    .custInvoice1{
-        background-color: #a4a3a3;
-        border-radius: 10px; border: 2px solid #00ff48;
-        width: 40%;
-        margin-left: 75px;
-    }
-    .custHeaderText1{
-        text-align: center;
-        color: #00ff48;
-    }
-    .custItemSelect1{
-        border-radius: 10px; border: 2px solid #00ff48;
-        width: 50%;
-        margin-left: 50px;
-    }
-    .custPurchase1{
-        border-radius: 10px; border: 2px solid #00ff48;
-        width: 20%;
-        height: 400px;
-        margin-left: 65px;
-    }
-    .custTable1{
-        width: 70%;
-        height: 100px;
-        position: absolute;
-        top: 590px;
-        text-align: center;
-        right: 60px;
-    }
-    .custTh1{
-        height: 30px;
-        padding: 1.5rem 2rem !important;
-        background-color: #00ff48 !important;
-    }
+
 </style>
 
 </head>
@@ -197,39 +93,102 @@
 <!--Home-->
 <section class="Home">
 
-    <section>
-        <div class="card text-bg-dark custHomeCard">
-            <img src="assets/hands-costume-office-firm-wallpaper-preview.jpg" class="card-img custHomeImg" alt="home_image" >
-            <div class="card-img-overlay custTexColor">
-                <h1 class="card-title"><br> WELCOME TO COMPANY</h1>
-                <p class="card-text">
-                    "Welcome to our bustling item shop, where every visit promises a treasure trove of delights! <br>
-                    Step into a realm where fantasy meets reality, and where the ordinary transforms into the extraordinary. <br>
-                    As you enter our virtual storefront, prepare to embark on a journey through a kaleidoscope of offerings<br>
-                    curated to enchant and captivate. From magical potions to enchanted artifacts, our shelves brim with wonders<br>
-                    waiting to be discovered. Whether you're a seasoned adventurer or a curious seeker, our front page beckons with<br>
-                    promises of adventure and intrigue. Join us as we embark on an odyssey of imagination, where every item tells a<br>
-                    story and every purchase unlocks a world of possibilities."</p>
-                <p class="card-text"><small>Join with us now....</small></p>
-            </div>
+    <section class="Index">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Income</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">Issues</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">Profits</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Warnings</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-area me-1"></i>
+                                    Area Chart Example
+                                </div>
+                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    Bar Chart Example
+                                </div>
+                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
         </div>
     </section>
+
 
 </section>
 
 <!--customer-->
 <section class="customer">
-<br>
-<br>
-<br>
-<br>
-    <!--modal-->
     <div class="CustomerBtn">
-        <div class="modal fade" id="exampleModalToggle " aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered" style="background-color: #5e0300">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #ffffff">
-                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel add " style="font-weight: bold; color: #32c457;">Add Customer</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel add" style="font-weight: bold; color: #32c457;">Add Customer</h1>
 
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -238,30 +197,32 @@
 
                         <div class="custInputText">
                             <div class="form-floating mb-3 p-1">
-                                <input type="text" class="form-control" id="floatingInput " placeholder="Customer Id">
+                                <input type="text" class="form-control CustomerId" id="floatingInput" placeholder="Customer Id">
                                 <label for="floatingInput">Customer Id</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="flotingName " placeholder="Customer Name">
+                                <input type="text" class="form-control CustomerName" id="flotingName" placeholder="Customer Name">
                                 <label for="flotingName">Customer Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingAddress " placeholder="Customer Address">
+                                <input type="text" class="form-control CustomerAddress" id="floatingAddress" placeholder="Customer Address">
                                 <label for="floatingAddress">Customer Address</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingSalary " placeholder="Customer Salary">
+                                <input type="number" class="form-control CustomerSalary" id="floatingSalary" placeholder="Customer Salary">
                                 <label for="floatingSalary">Customer Salary</label>
                             </div>
                         </div>
                         <!--button set-->
                         <div class="btn-group custBtnSet2" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn custBtn btn-warning"  >Save</button>
-                            <button type="button" class="btn btn-primary custBtn">Clear</button>
+                            <button type="button" class="btn custBtn btn-warning"   id="Save">Save</button>
+                            <button type="button" class="btn btn-danger custBtn">Delete</button>
+                            <button type="button" class="btn btn-warning custBtn "data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="border-radius: 20px;background-color: purple">Add Customer</button>
+                        <button type="button" class="btn btn-primary custBtn">Clear</button>
                     </div>
                 </div>
             </div>
@@ -282,7 +243,7 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody id="customer-tbl">
         <tr>
             <td>1</td>
             <td>John Doe</td>
@@ -370,42 +331,39 @@
 </section>
 <!--Item-->
 <section class="Item">
-
     <!--modal-->
-    <div class="CustomerBtn">
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+   <!-- <div class="ItemBtn">
+        <div class="modal fade" id="exampleModalToggle w" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered" style="background-color: #5e0300">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #ffffff">
-                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel add" style="font-weight: bold; color: #32c457;">Add Item</h1>
-
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel" style="font-weight: bold; color: #32c457;">Add Item</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" style="background-color: #a4a3a3">
-                        <!--Show a second modal and hide this one with the button below.-->
-
+                        &lt;!&ndash;Show a second modal and hide this one with the button below.&ndash;&gt;
                         <div class="custInputText">
                             <div class="form-floating mb-3 p-1">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Customer Id">
-                                <label for="floatingInput">Item Id</label>
+                                <input type="text" class="form-control" id="itemId" placeholder="Item Id">
+                                <label for="itemId">Item Id</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="flotingName" placeholder="Customer Name">
-                                <label for="flotingName">Item Name</label>
+                                <input type="text" class="form-control" id="itemName " placeholder="Item Name">
+                                <label for="itemName">Item Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingAddress" placeholder="Customer Address">
-                                <label for="floatingAddress">Item Quantity</label>
+                                <input type="number" class="form-control" id="itemQuantity" placeholder="Item Quantity">
+                                <label for="itemQuantity">Item Quantity</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingSalary" placeholder="Customer Salary">
-                                <label for="floatingSalary">Item Price</label>
+                                <input type="number" class="form-control" id="itemPrice" placeholder="Item Price">
+                                <label for="itemPrice">Item Price</label>
                             </div>
                         </div>
-                        <!--button set-->
-                        <div class="btn-group custBtnSet2" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn custBtn btn-warning"  >Save</button>
-                            <button type="button" class="btn btn-primary custBtn">Clear</button>
+                        &lt;!&ndash;button set&ndash;&gt;
+                        <div class="btn-group ItemBtnSet2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn Itembtn btn-warning">Save</button>
+                            <button type="button" class="btn btn-primary Itembtn">Clear</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -414,19 +372,61 @@
                 </div>
             </div>
         </div>
-
         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="background-color: #32c457; box-shadow: 1px 1px 20px 5px #110c0f;font-weight: bold;color: black">Add Item</button>
+    </div>-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary addBtn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #32c457; box-shadow: 1px 1px 20px 5px #110c0f;font-weight: bold;color: black">
+        Add Item
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="custInputText">
+                        <div class="form-floating mb-3 p-1">
+                            <input type="text" class="form-control" id="itemId" placeholder="Item Id">
+                            <label for="itemId">Item Id</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="itemName " placeholder="Item Name">
+                            <label for="itemName">Item Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="itemQuantity" placeholder="Item Quantity">
+                            <label for="itemQuantity">Item Quantity</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="itemPrice" placeholder="Item Price">
+                            <label for="itemPrice">Item Price</label>
+                        </div>
+                    </div>
+
+                    <div class="btn-group ItemBtnSet2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn Itembtn btn-warning">Save</button>
+                        <button type="button" class="btn btn-primary Itembtn">Clear</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
+
     <thead>
 
 
-    <table class="table custTable">
+    <table class="table ItemTable">
         <thead class="table-light">
         <tr>
-            <th class="text-white customerHead">No</th>
-            <th class="text-white customerHead">Item Name</th>
-            <th class="text-white customerHead">Item Quantity</th>
-            <th class="text-white customerHead">Item Price</th>
+            <th class="text-white ItemHead">No</th>
+            <th class="text-white ItemHead">Item Name</th>
+            <th class="text-white ItemHead">Item Quantity</th>
+            <th class="text-white ItemHead">Item Price</th>
         </tr>
         </thead>
 
@@ -496,8 +496,8 @@
     </table>
 
     <!--search bar-->
-    <div class="card custSearchCard">
-        <div class="card-header custSearchCardHeader">
+    <div class="card ItemSearchCard">
+        <div class="card-header ItemSearchCardHeader">
             <b>Search Item</b>
         </div>
         <div class="card-body">
@@ -506,10 +506,10 @@
                 <button class="btn btn-outline-success" type="button" >Search</button>
 
                 <!--button set-->
-                <div class="btn-group custBtnSet" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-danger custBtn">Delete</button>
-                    <button type="button" class="btn btn-warning custBtn "data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
-                    <button type="button" class="btn btn-primary custBtn">Clear</button>
+                <div class="btn-group ItemBtnSet" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger Itembtn">Delete</button>
+                    <button type="button" class="btn btn-warning Itembtn "data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                    <button type="button" class="btn btn-primary Itembtn">Clear</button>
                 </div>
             </div>
         </div>
@@ -782,42 +782,18 @@
     </div>
 </section>
 <script src="../Pos-System/lib/jquery-3.7.1.min.js"></script >
-<script>
 
-   $("#CustomerBtn").on('click',()=>{
-        console.log("Student");
-        $(".customer").css({ display:"block"}); // Show Student section
-        $(".Item").css({ display:"none"}); // Hide Course section
-        $(".OrderPlacement").css({ display:"none"}); // Hide Course section
-        $(".orderDetails").css({ display:"none"}); // Hide Course section
-        $(".Home").css({ display:"none"}); // Hide Course section
-    });
-    $("#ItemBtn").on('click',()=>{
-        console.log("Student");
-        $(".customer").css({ display:"none"}); // Show Student section
-        $(".Item").css({ display:"block"}); // Hide Course section
-        $(".OrderPlacement").css({ display:"none"}); // Hide Course section
-        $(".orderDetails").css({ display:"none"}); // Hide Course section
-        $(".Home").css({ display:"none"}); // Hide Course section
-    });
-    $("#OrderPlacement").on('click',()=>{
-        console.log("Student");
-        $(".customer").css({ display:"none"}); // Show Student section
-        $(".Item").css({ display:"none"}); // Hide Course section
-        $(".OrderPlacement").css({ display:"block"}); // Hide Course section
-        $(".orderDetails").css({ display:"none"}); // Hide Course section
-        $(".Home").css({ display:"none"}); // Hide Course section
-    });
-    $("#OrderDetails").on('click',()=>{
-        console.log("Student");
-        $(".customer").css({ display:"none"}); // Show Student section
-        $(".Item").css({ display:"none"}); // Hide Course section
-        $(".OrderPlacement").css({ display:"none"}); // Hide Course section
-        $(".orderDetails").css({ display:"block"}); // Hide Course section
-        $(".Home").css({ display:"none"}); // Hide Course section
-    });
 
-</script>
+<script  src="assets/Script.js"></script>
+<script  src="Controller/Customer.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="assets/demo/chart-area-demo.js"></script>
+<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+<script src="js/datatables-simple-demo.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>

@@ -1,0 +1,11 @@
+.customerHead{
+    color: black!important;
+    background-color: chartreuse !important;
+
+
+}
+.div{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
