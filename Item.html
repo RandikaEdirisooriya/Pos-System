@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pos</title>
+    <link rel="stylesheet" href="assets/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/navBarStyle.css">
+    <link rel="stylesheet" href="assets/css/normalize_css.css">
+    <link rel="stylesheet" href="assets/css/formStyle.css">
+    <link rel="stylesheet" href="assets/css/orderDetailsStyles.css">
+    <link rel="stylesheet" href="assets/css/preLoader_style.css">
+</head>
+<body>
+<nav id="navBar" class="navbar navbar-expand-lg bg-body-tertiary bg-primary-subtle">
+    <div class="container-fluid">
+        <a id="samplePos" class="navbar-brand gradient-text" href="#">YourShop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menuBar">
+                <li class="nav-item">
+                    <a class="nav-link active gradient-text" id="home_page" aria-current="page" href=index.html>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link gradient-text" id="customer_page" href=Customer.html>Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link gradient-text" id="item_page" href=Item.html>Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link gradient-text" id="order_page" href=Order.html>Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link gradient-text" id="order_details_page" href=OrderDetail.html>Order Details</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input id="searchField" class="form-control me-2" type="search" placeholder="Search Text Here" aria-label="Search">
+                <button id="search" class="btn btn-outline-success gradient-text" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<main id="Item">
+    <section>
+        <div class="container form">
+            <div class="row">
+                <div class="text-center gradient-text">
+                    <h3>Item Details Form</h3>
+                </div>
+                <div class="col">
+                    <form id="form_input">
+                        <div class="mb-3">
+                            <label for="item_code" class="form-label">Item code</label>
+                            <input type="text" class="form-control" id="item_code" placeholder="Item Code Here" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_name" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="item_name" placeholder="Item Name Here">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" placeholder="Price Here">
+                        </div>
+                        <div class="mb-3">
+                            <label for="QtyOnHand" class="form-label">Qty on hand</label>
+                            <input type="number" class="form-control" id="QtyOnHand" placeholder="Qty On Hand Here">
+                        </div>
+                        <div class="mt-1 button">
+                            <button id="submitBtn1" type="submit" class="btn btn-success">Submit</button>
+                            <button id="updateBtn1" type="button" class="btn btn-primary">Update</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col table1">
+                    <table class="table" id="itemTable">
+                        <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Price Per Kg</th>
+                            <th scope="col">Qty On Hand</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
