@@ -19,30 +19,6 @@ let searchField=$('#searchField');
 const emailPattern = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
 const mobilePattern = new RegExp("^(?:0|94|\\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\\d)\\d{6}$");
 
-//customer search
-searchField.on('input', function () {
-    let search_term = searchField.val();
-
-    let results = customer_db.filter((item) =>
-
-        item.customer_id.toLowerCase().startsWith(search_term.toLowerCase()) || item.name.toLowerCase().startsWith(search_term.toLowerCase()) || item.address.toLowerCase().startsWith(search_term.toLowerCase()) ||
-        item.contact.toLowerCase().startsWith(search_term) || item.email.toLowerCase().startsWith(search_term.toLowerCase())
-
-    );
-
-    $('tbody').eq(0).empty();
-    results.map((item, index) => {
-        let tbl_row = `<tr>
-            <th scope="row">${item.customer_id}</th>
-            <td>${item.name}</td>
-            <td>${item.address}</td>
-            <td>${item.contact}</td>
-            <td>${item.email}</td>
-        </tr>`;
-        $('tbody').eq(0).append(tbl_row);
-    });
-
-});
 
 
 /*Function to generate the next customer ID*/
@@ -80,9 +56,8 @@ function resetColumns() {
     update.prop("disabled", true);
     submit.prop("disabled",false);
 }
-/*
 
-/!*Validation*!/
+/*Validation*/
 function validation(value,message,test) {
     if(!value){
         showValidationError('Null Input','Input '+message);
@@ -98,7 +73,7 @@ function validation(value,message,test) {
     return true;
 }
 
-/!*Show Validation Error*!/
+/*Show Validation Error*/
 function showValidationError(title, text) {
     Swal.fire({
         icon: 'error',
@@ -107,7 +82,6 @@ function showValidationError(title, text) {
         footer: '<a href="">Why do I have this issue?</a>'
     });
 }
-*/
 
 /*Customer Form Submit*/
 submit.on('click', (e) => {
@@ -118,32 +92,34 @@ submit.on('click', (e) => {
     let addressValue = address.val().trim();
     let contactValue = contact.val().trim();
     let emailValue = email.val().trim();
-    let customer = new CustomerModel(
-        customerIdValue,
-        nameValue,
-        addressValue,
-        contactValue,
-        emailValue
-    );
-    customer_db.push(customer);
 
-    populateCustomerTable();
-
-    resetColumns();
-});
-  /*  if(
+    if(
         validation(nameValue, "customer name", null) &&
         validation(addressValue, "Address", null) &&
         validation(contactValue, "Contact", mobilePattern.test(contactValue)) &&
         validation(emailValue,"Email",emailPattern.test(emailValue))){
-
+        let customer = new CustomerModel(
+            customerIdValue,
+            nameValue,
+            addressValue,
+            contactValue,
+            emailValue
         );
 
         Swal.fire(
             'Save Successfully !',
             'Successful',
             'success'
-        )*/
+        )
+
+        customer_db.push(customer);
+
+        populateCustomerTable();
+
+        resetColumns();
+    }
+
+});
 
 
 
