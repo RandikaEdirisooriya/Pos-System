@@ -234,8 +234,8 @@
                         </div>
                         <div class="mt-1 button">
                             <button id="submitBtn1" type="button" onclick="SaveItem()" class="btn btn-success">Submit</button>
-                            <button id="updateBtn1" type="button" class="btn btn-primary">Update</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button id="updateBtn1" type="button" onclick="UpdateItem()" class="btn btn-primary">Update</button>
+                            <button type="button" onclick="deleteItem()" class="btn btn-danger">Delete</button>
                             <button type="reset" class="btn btn-warning">Reset</button>
                         </div>
                     </form>
@@ -250,7 +250,7 @@
                             <th scope="col">Qty On Hand</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="itemtbl">
                         </tbody>
                     </table>
                 </div>
@@ -406,6 +406,7 @@
 <script src="assets/demo/chart-bar-demo.js"></script>
 <script src="script/homeScript.js"></script>
 <script src="jsController/Customer.js"></script>
+<script src="jsController/Item.js"></script>
 <script type="module" src="controller/customerController.js"></script>
 <script type="module" src="controller/itemController.js"></script>
 <script type="module" src="controller/orderController.js"></script>

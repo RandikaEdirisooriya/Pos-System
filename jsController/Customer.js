@@ -1,5 +1,5 @@
 $(document).ready(function () {
-loadtbl();
+    loadtble();
 
     $('#customertble').on('click', 'tr', function () {
         // Get the data from the clicked row
@@ -46,7 +46,7 @@ function SaveCustomer(){
         success:function (data){
 
             alert(data)
-loadtbl();
+            loadtble();
         },
         error:function (){
             alert("Error")
@@ -78,7 +78,7 @@ function UpdateCustomer(){
         success:function (data){
 
             alert(data)
-            loadtbl();
+            loadtble();
 
         },
         error:function (){
@@ -87,7 +87,7 @@ function UpdateCustomer(){
     })
 }
 
-function loadtbl(){
+function loadtble(){
     $.ajax({
         url: "http://localhost:8080/shop/customer",
         type: "GET",
@@ -154,7 +154,7 @@ function DeleteCustomer(){
         success:function (data){
 
             alert(data)
-            loadtbl();
+            loadtble();
 
         },
         error:function (){
