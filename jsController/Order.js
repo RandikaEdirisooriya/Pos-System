@@ -1,5 +1,8 @@
 var selectedItemCode = '';
 var orderqty = '';
+var item_name='';
+var price='';
+var QtyOnHand='';
 
 
 
@@ -9,6 +12,8 @@ $(document).ready(function () {
     LoadItemIds();
     generateCurrentDate();
     TableClick();
+    loadtbl()
+    loadtble()
 
     // Add event listener for discount input
     $('#discount').on('input', calculateSubTotal);
@@ -163,9 +168,9 @@ function TableClick() {
     $('#itemTable1').on('click', 'tr', function () {
         // Get the data from the clicked row
         selectedItemCode = $(this).find('td:eq(0)').text();
-        var item_name = $(this).find('td:eq(1)').text();
-        var price = parseFloat($(this).find('td:eq(2)').text());
-        var QtyOnHand = $(this).find('td:eq(3)').text();
+        item_name = $(this).find('td:eq(1)').text();
+         price = parseFloat($(this).find('td:eq(2)').text());
+         QtyOnHand = $(this).find('td:eq(3)').text();
         orderqty = parseFloat($(this).find('td:eq(4)').text());
 
         // Calculate the total
@@ -225,7 +230,7 @@ function Purchase() {
             success:function (data){
 
                 alert(data)
-
+updateItem();
 
             },
             error:function (){
@@ -235,4 +240,30 @@ function Purchase() {
 
 
     }
+}
+
+function updateItem(){
+    $.ajax({
+        method:"PUT",
+        contentType:"application/json",
+        url:"http://localhost:8080/shop/item",
+        async:true,
+        data:JSON.stringify({
+            "id": selectedItemCode,
+            "name": item_name,
+            "price": price,
+            "qty": QtyOnHand-orderqty
+
+        }),
+        success:function (data){
+
+            alert(data)
+
+
+        },
+        error:function (){
+            alert("Error")
+        }
+    })
+
 }
