@@ -344,7 +344,7 @@
                             <input type="number" class="form-control" id="getQty" placeholder="Qty Here">
                         </div>
                         <div class="m-3" id="button1">
-                            <button id="addBtn" type="submit" class="btn btn-success">Add</button>
+                            <button id="addBtn" type="submit"onclick="AddItemTable()" class="btn btn-success">Add</button>
                             <button id="UpdateBtn3" type="button" class="btn btn-primary">Update</button>
                             <button id="removeBtn" type="button" class="btn btn-danger">Remove</button>
                             <button id="resetItemDetailsBtn" type="reset" class="btn btn-warning">Reset</button>
@@ -360,7 +360,7 @@
                                     <th scope="col">Qty</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="itemTable1">
                                 </tbody>
                             </table>
                         </div>

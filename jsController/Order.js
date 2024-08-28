@@ -1,34 +1,28 @@
 $(document).ready(function () {
     loadCustomerId();
     LoadItemIds();
-
+    generateCurrentDate();
+    TableClick();
 });
-function loadCustomerId(){
-    let customers = []; // To store the fetched customer data
 
-    // Fetch customer data
+function generateCurrentDate(){
+    $("#order_date").val(new Date().toISOString().slice(0, 10));
+}
+
+function loadCustomerId(){
+    let customers = [];
+
     $.ajax({
         url: "http://localhost:8080/shop/customer",
         type: "GET",
         contentType: "application/json",
         success: function (data) {
-            // Extract the JSON array string from data
             const jsonString = data.substring(0, data.lastIndexOf(']') + 1);
-
-            // Parse the JSON string into an array of customer objects
             customers = JSON.parse(jsonString);
-
-            // Clear existing options in the select element except the first one
             $('#customer_id1').find('option:not(:first)').remove();
-
-            // Iterate over the array of customer objects
             for (let emp of customers) {
-                let empId = emp.id; // Assuming 'id' is the field for customer ID
-
-                // Create a new option element for each customer ID
+                let empId = emp.id;
                 let option = $('<option></option>').val(empId).text(empId);
-
-                // Append the option to the select element
                 $('#customer_id1').append(option);
             }
         },
@@ -37,49 +31,31 @@ function loadCustomerId(){
         }
     });
 
-    // Event listener for when a customer ID is selected
     $('#customer_id1').change(function() {
-        // Get the selected customer ID
         const selectedCustomerId = $(this).val();
-
-        // Find the customer object that matches the selected ID
         const selectedCustomer = customers.find(customer => customer.id === selectedCustomerId);
-
-        // If a matching customer is found, set the customer name in the input field
         if (selectedCustomer) {
-            $('#customer_name1').val(selectedCustomer.name); // Set the customer name
+            $('#customer_name1').val(selectedCustomer.name);
         } else {
-            $('#customer_name1').val(''); // Clear the input if no customer is found
+            $('#customer_name1').val('');
         }
     });
 }
 
 function LoadItemIds(){
-    let items = []; // To store the fetched item data
+    let items = [];
 
-    // Fetch item data
     $.ajax({
         url: "http://localhost:8080/shop/item",
         type: "GET",
         contentType: "application/json",
         success: function (data) {
-            // Extract the JSON array string from data
             const jsonString = data.substring(0, data.lastIndexOf(']') + 1);
-
-            // Parse the JSON string into an array of item objects
             items = JSON.parse(jsonString);
-
-            // Clear existing options in the select element except the first one
             $('#item_code1').find('option:not(:first)').remove();
-
-            // Iterate over the array of item objects
             for (let item of items) {
-                let itemId = item.id; // Assuming 'id' is the field for item ID
-
-                // Create a new option element for each item ID
+                let itemId = item.id;
                 let option = $('<option></option>').val(itemId).text(itemId);
-
-                // Append the option to the select element
                 $('#item_code1').append(option);
             }
         },
@@ -88,24 +64,76 @@ function LoadItemIds(){
         }
     });
 
-    // Event listener for when an item ID is selected
     $('#item_code1').change(function() {
-        // Get the selected item ID
         const selectedItemId = $(this).val();
-
-        // Find the item object that matches the selected ID
         const selectedItem = items.find(item => item.id === selectedItemId);
-
-        // If a matching item is found, set the item details in the input fields
         if (selectedItem) {
-            $('#item_name1').val(selectedItem.name); // Set the item name
-            $('#price1').val(selectedItem.price);    // Set the item price
-            $('#qty_on_hand').val(selectedItem.qty); // Set the item quantity
+            $('#item_name1').val(selectedItem.name);
+            $('#price1').val(selectedItem.price);
+            $('#qty_on_hand').val(selectedItem.qty);
         } else {
-            // Clear the input fields if no item is found
             $('#item_name1').val('');
             $('#price1').val('');
             $('#qty_on_hand').val('');
         }
     });
+}
+function AddItemTable() {
+    var item_code = $("#item_code1").val();
+    var item_name = $("#item_name1").val();
+    var price = parseFloat($("#price1").val());
+    var QtyOnHand = parseInt($("#qty_on_hand").val(), 10);
+    var getQty = parseInt($("#getQty").val(), 10);
+
+    // Check if getQty is greater than QtyOnHand
+    if (getQty > QtyOnHand) {
+        alert("Invalid quantity: Requested quantity exceeds quantity on hand.");
+        return; // Exit the function if the quantity is invalid
+    }
+
+    // Check if all fields are filled in properly before adding to the table
+    if (!item_code || !item_name || isNaN(price) || isNaN(QtyOnHand) || isNaN(getQty)) {
+        alert("Please fill in all fields correctly.");
+        return;
+    }
+
+    // Create a new row with the item data
+    var newRow = `
+        <tr>
+            <td>${item_code}</td>
+            <td>${item_name}</td>
+            <td>${price.toFixed(2)}</td> <!-- Format price to 2 decimal places -->
+            <td>${QtyOnHand}</td>
+            <td>${getQty}</td>
+        </tr>
+    `;
+
+    // Append the new row to the table body
+    $("#itemTable1").append(newRow);
+
+    // Clear the input fields after adding the row
+    $("#item_code1").val('');
+    $("#item_name1").val('');
+    $("#price1").val('');
+    $("#qty_on_hand").val('');
+    $("#getQty").val('');
+}
+
+function TableClick(){
+    $('#itemTable1').on('click', 'tr', function () {
+        // Get the data from the clicked row
+        var item_code = $(this).find('td:eq(0)').text();
+        var item_name = $(this).find('td:eq(1)').text();
+        var price = parseFloat($(this).find('td:eq(2)').text());
+        var QtyOnHand = $(this).find('td:eq(3)').text();
+        var getqty = parseFloat($(this).find('td:eq(4)').text());
+
+        // Calculate the total
+        var total = getqty * price;
+
+        // Set the total value in the input field
+        $("#total").val(total.toFixed(2)); // Formats the total to 2 decimal places
+    });
+
+
 }
